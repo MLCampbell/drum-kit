@@ -17,31 +17,45 @@ footer {
 }
 
 .w {
-
+  background: url(images/kick.png);
+  background-size: 100%;
 }
 
 .a {
+  background: url(images/snare.png);
+  background-size: 100%;
+}
 
+.i {
+  background: url(images/hi-hat.png);
+  background-size: 80%;
+  background-position-y: 40%;
+  background-position-x: 10%
 }
 
 .s {
-
+  background: url(images/tom1.png);
+  background-size: 110%;
 }
 
 .d {
-
+  background: url(images/tom2.png);
+  background-size: 110%;
 }
 
 .j {
-
+  background: url(images/tom3.png);
+  background-size: 100%;
 }
 
 .k {
-
+  background: url(images/tom4.png);
+  background-size: 100%;
 }
 
 .l {
-
+  background: url(images/crash.png);
+  background-size: 100%;
 }
 
 .set {

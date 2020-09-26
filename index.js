@@ -1,16 +1,21 @@
+// Detect button click
+
 for (i = 0; i < document.querySelectorAll('.drum').length; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         var buttonInnerHTML = this.innerHTML;
         makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
     });
 }
 
-document.addEventListener("keydown", function(press) {
-    makeSound(press.key)
+// Detect keyboard press
+document.addEventListener("keydown", function (e) {
+    makeSound(e.key)
+    buttonAnimation(e.key);
 });
 
-function makeSound(keystroke) {
-    switch (keystroke) {
+function makeSound(key) {
+    switch (key) {
         case "w":
             var kick = new Audio("sounds/kick-bass.mp3");
             kick.play();
@@ -51,7 +56,14 @@ function makeSound(keystroke) {
             crash.play();
             break;
 
-        default:
+        default: console.log(keystroke);
             break;
     }
+}
+
+function buttonAnimation(currentKey) {
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function () { activeButton.classList.remove("pressed") }, 100);
 }
